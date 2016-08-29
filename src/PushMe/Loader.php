@@ -22,16 +22,13 @@ class Loader extends Plugin implements Listener {
         $z = $direction->getZ();
         $block = $player->getLevel()->getBlockIdAt($player->getX(), ($player->getY() - 0.1), $player->getZ());
         if($block === 152)
-            if($player->hasPermission("pushme.use")) {
+            {
                 for($i = 1; $i <= 1000; $i++) {
                     $player->knockBack($player, 0, $x, $z, 0.5);
                 }
                 $player->getLevel()->addSound(new FizzSound(new Vector3($player->getX(), $player->getY(), $player->getZ())));
-            } else {
-                $player->sendTip("I don wanna push you cuz you to noob for me");
-                $player->getLevel()->addSound(new ClickSound(new Vector3($player->getX(), $player->getY(), $player->getZ())));
             }
-    }
+                $player->sendTip("§c红石块§a弹射中")
 
     public function onDisable() {
         $this->getServer()->getLogger()->info("PushMe Shutting down");
