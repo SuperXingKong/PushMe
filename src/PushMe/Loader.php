@@ -12,7 +12,7 @@ use pocketmine\level\sound\ClickSound;
 class Loader extends Plugin implements Listener {
     public function onEnable() {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getServer()->getLogger()->info("PushMe Starting");
+        $this->getServer()->getLogger()->info("红石推开启");
     }
 
     public function onPlayerMove(PlayerMoveEvent $event) {
@@ -27,10 +27,10 @@ class Loader extends Plugin implements Listener {
                     $player->knockBack($player, 0, $x, $z, 0.5);
                 }
                 $player->getLevel()->addSound(new FizzSound(new Vector3($player->getX(), $player->getY(), $player->getZ())));
-            }
                 $player->sendTip("§c红石块§a弹射中")
+            }
 
     public function onDisable() {
-        $this->getServer()->getLogger()->info("PushMe Shutting down");
+        $this->getServer()->getLogger()->info("红石推关闭");
     }
 }
