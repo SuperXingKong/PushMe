@@ -1,4 +1,4 @@
-# PushMe
-LBSG knockback block
+# 红石推
+LBSG红石弹跳插件
 
-Simply place a redstone block and step on it! and watch the magic
+放置一个红石块,见证奇迹!
